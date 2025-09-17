@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahida Khatun - Registered Nurse Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: slideInFromTop 1.2s ease-out;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(90deg, #3498db, #2980b9); }
+            50% { background: linear-gradient(90deg, #2980b9, #3498db); }
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 4px solid white;
+        }
+
+        .profile-image::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .profile-info h1 {
+            font-size: 3.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: typewriter 2s steps(12) 0.5s both;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #3498db;
+        }
+
+        @keyframes typewriter {
+            0% {
+                width: 0;
+                border-right-color: #3498db;
+            }
+            99% {
+                border-right-color: #3498db;
+            }
+            100% {
+                width: 100%;
+                border-right-color: transparent;
+            }
+        }
+
+        .profile-info .title {
+            font-size: 1.5em;
+            color: #3498db;
+            margin-bottom: 15px;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.8s both;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            animation: slideInFromBottom 1.2s ease-out 1s both;
+            opacity: 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(52, 152, 219, 0.1);
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        .contact-item:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .card.animate {
+            animation: scrollPopUp 0.8s ease-out forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        @keyframes scrollPopUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.8);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(-10px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .card-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3498db, #e74c3c);
+            animation: underlineExpand 2s ease-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { text-shadow: 0 0 0 transparent; }
+            50% { text-shadow: 0 0 10px rgba(52, 152, 219, 0.3); }
+        }
+
+        @keyframes underlineExpand {
+            0% { width: 0; }
+            50% { width: 60%; }
+            100% { width: 0; }
+        }
+
+        .summary-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-item {
+            background: rgba(52, 152, 219, 0.05);
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            font-size: 1.1em;
+            color: #e74c3c;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .job-duration {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievement-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .achievement-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, rgba(116, 75, 162, 0.1), rgba(102, 126, 234, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(116, 75, 162, 0.2);
+        }
+
+        .degree-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #8e44ad;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .education-details {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(46, 204, 113, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #2ecc71;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            animation: skillFloat 3s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1) rotateZ(5deg);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .skill-tag:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        .skill-tag:nth-child(even) {
+            animation-delay: 1s;
+        }
+
+        @keyframes skillFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .languages-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .language-badge {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(240, 147, 251, 0.3);
+            transition: all 0.4s ease;
+            animation: languagePulse 4s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .language-badge:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.5);
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .language-badge:nth-child(1) { animation-delay: 0s; }
+        .language-badge:nth-child(2) { animation-delay: 1s; }
+        .language-badge:nth-child(3) { animation-delay: 2s; }
+        .language-badge:nth-child(4) { animation-delay: 3s; }
+
+        @keyframes languagePulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(240, 147, 251, 0.3);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 8px 25px rgba(240, 147, 251, 0.5);
+            }
+        }
+
+        .personal-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 10px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: slideInFromBottom 1.5s ease-out 1.5s both;
+            opacity: 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            animation: buttonGlow 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.5);
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .btn-secondary {
+            background: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+
+        .btn-secondary:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        @keyframes buttonGlow {
+            0%, 100% {
+                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .profile-info h1 {
+                font-size: 2.5em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Medical Equipment Symbols Moving */
+        .medical-equipment {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.08);
+            font-family: monospace;
+            font-size: 24px;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        /* Stethoscope pattern */
+        .stethoscope-pattern {
+            top: 10%;
+            left: -200px;
+            animation: moveRight 25s infinite;
+        }
+
+        /* Heart monitor pattern */
+        .heart-monitor {
+            top: 30%;
+            left: -300px;
+            animation: moveRight 30s infinite;
+            animation-delay: -5s;
+        }
+
+        /* Medical cross pattern */
+        .medical-cross {
+            top: 50%;
+            left: -150px;
+            animation: moveRight 28s infinite;
+            animation-delay: -10s;
+        }
+
+        /* Syringe pattern */
+        .syringe-pattern {
+            top: 70%;
+            left: -250px;
+            animation: moveRight 35s infinite;
+            animation-delay: -15s;
+        }
+
+        /* Pills pattern */
+        .pills-pattern {
+            top: 85%;
+            left: -180px;
+            animation: moveRight 22s infinite;
+            animation-delay: -8s;
+        }
+
+        /* Diagonal moving patterns */
+        .diagonal-1 {
+            top: -100px;
+            left: 20%;
+            animation: moveDiagonal1 40s infinite;
+        }
+
+        .diagonal-2 {
+            top: 120%;
+            right: 30%;
+            animation: moveDiagonal2 45s infinite;
+            animation-delay: -20s;
+        }
+
+        .diagonal-3 {
+            top: -50px;
+            right: 10%;
+            animation: moveDiagonal3 38s infinite;
+            animation-delay: -12s;
+        }
+
+        /* Vertical patterns */
+        .vertical-1 {
+            top: -100px;
+            left: 60%;
+            animation: moveDown 33s infinite;
+        }
+
+        .vertical-2 {
+            top: -150px;
+            right: 25%;
+            animation: moveDown 29s infinite;
+            animation-delay: -18s;
+        }
+
+        @keyframes moveRight {
+            0% {
+                transform: translateX(0px);
+            }
+            100% {
+                transform: translateX(calc(100vw + 300px));
+            }
+        }
+
+        @keyframes moveDiagonal1 {
+            0% {
+                transform: translateX(0px) translateY(0px);
+            }
+            100% {
+                transform: translateX(-80vw) translateY(120vh);
+            }
+        }
+
+        @keyframes moveDiagonal2 {
+            0% {
+                transform: translateX(0px) translateY(0px);
+            }
+            100% {
+                transform: translateX(60vw) translateY(-140vh);
+            }
+        }
+
+        @keyframes moveDiagonal3 {
+            0% {
+                transform: translateX(0px) translateY(0px);
+            }
+            100% {
+                transform: translateX(-70vw) translateY(130vh);
+            }
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(calc(100vh + 200px));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <!-- Horizontal Moving Patterns -->
+        <div class="medical-equipment stethoscope-pattern">◯◯━━◯◯ ◯◯━━◯◯ ◯◯━━◯◯ ◯◯━━◯◯</div>
+        <div class="medical-equipment heart-monitor">╱╲╱╲╱╲ ╱╲╱╲╱╲ ╱╲╱╲╱╲ ╱╲╱╲╱╲</div>
+        <div class="medical-equipment medical-cross">✚ ✚ ✚ ✚ ✚ ✚ ✚ ✚ ✚</div>
+        <div class="medical-equipment syringe-pattern">━━━◯ ━━━◯ ━━━◯ ━━━◯ ━━━◯</div>
+        <div class="medical-equipment pills-pattern">○ ○ ○ ○ ○ ○ ○ ○ ○ ○</div>
+        
+        <!-- Diagonal Moving Patterns -->
+        <div class="medical-equipment diagonal-1">◯ ◯ ◯ ◯ ◯ ◯</div>
+        <div class="medical-equipment diagonal-2">✚ ✚ ✚ ✚ ✚</div>
+        <div class="medical-equipment diagonal-3">━ ━ ━ ━ ━ ━</div>
+        
+        <!-- Vertical Moving Patterns -->
+        <div class="medical-equipment vertical-1">│<br>│<br>│<br>│<br>│<br>│</div>
+        <div class="medical-equipment vertical-2">┃<br>┃<br>┃<br>┃<br>┃<br>┃</div>
+    </div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-image">
+                    WK
+                    <!-- Profile image will be placed here -->
+                    <!-- <img src="profile-photo.jpg" alt="Wahida Khatun" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"> -->
+                </div>
+                <div class="profile-info">
+                    <h1>Wahida Khatun</h1>
+                    <div class="title">Registered Nurse</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📧</span> wahidakhatun1@gmail.com
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span> 6002060862
+                        </div>
+                        <div class="contact-item">
+                            <span>📍</span> Nagaon, Assam
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2 class="card-title">Professional Summary</h2>
+                <p class="summary-text">
+                    Dedicated Registered Nurse with 1+ years of intensive care experience and comprehensive clinical training in General Nursing and Midwifery. Proven expertise in critical patient care, ventilator management, emergency response protocols, medication administration, and patient documentation. Strong advocate for patient-centered care with excellent communication skills and ability to work effectively in high-pressure healthcare environments.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Clinical Skills</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Patient Care</span>
+                            <span class="skill-tag">Medication Admin</span>
+                            <span class="skill-tag">Ventilator Mgmt</span>
+                            <span class="skill-tag">Emergency Response</span>
+                            <span class="skill-tag">CVP Assistance</span>
+                            <span class="skill-tag">Wound Care</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Documentation</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">EHR Management</span>
+                            <span class="skill-tag">Clinical Charting</span>
+                            <span class="skill-tag">Patient Education</span>
+                            <span class="skill-tag">Team Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card full-width">
+                <h2 class="card-title">Work Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-title">ICU Registered Nurse</div>
+                    <div class="company-name">Royal Hospital, Kolkata</div>
+                    <div class="job-duration">January 2022 – May 2023</div>
+                    <ul class="achievement-list">
+                        <li>Delivered comprehensive patient-centered care to 8-12 critically ill patients per shift in a 24-bed ICU, maintaining 98% patient satisfaction scores</li>
+                        <li>Managed mechanical ventilators and invasive monitoring systems, reducing ventilator-associated complications by 15%</li>
+                        <li>Executed emergency response protocols during code blue situations, achieving successful outcomes in 90% of interventions</li>
+                        <li>Collaborated with multidisciplinary teams to implement care plans, contributing to 20% reduction in average ICU length of stay</li>
+                        <li>Provided family education and support, improving compliance with care instructions by 85%</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Clinical Intern</div>
+                    <div class="company-name">Aster CMI Hospital</div>
+                    <div class="job-duration">Duration: 6 months</div>
+                    <ul class="achievement-list">
+                        <li>Gained hands-on experience in various nursing specialties including medical-surgical, pediatric, and emergency care</li>
+                        <li>Assisted senior nurses with patient care activities, medication administration, and clinical documentation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="degree-title">General Nursing and Midwifery (G.N.M)</div>
+                    <div class="institution">Rajiv Gandhi School of Nursing</div>
+                    <div class="education-details">
+                        <strong>Duration:</strong> 2021 – 2024<br>
+                        <strong>Registration:</strong> 20DN05128<br>
+                        <strong>Performance:</strong><br>
+                        • 1st Year: 66.6% (2022)<br>
+                        • 2nd Year: 65.0% (2023)<br>
+                        • 3rd Year: 70.75% (2024)
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree-title">Higher Secondary Education</div>
+                    <div class="institution">S.A.B.A Board</div>
+                    <div class="education-details">
+                        <strong>Year:</strong> 2019 | <strong>Stream:</strong> Arts | <strong>Score:</strong> 37.8%
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">Languages</h2>
+                <div class="languages-section">
+                    <span class="language-badge">Hindi (Native)</span>
+                    <span class="language-badge">Bengali (Native)</span>
+                    <span class="language-badge">English (Proficient)</span>
+                    <span class="language-badge">Kannada (Conversational)</span>
+                </div>
+            </div>
+
+            <div class="card full-width">
+                <h2 class="card-title">Personal Information</h2>
+                <div class="personal-info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Date of Birth:</span>
+                        <span>January 20, 2000</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nationality:</span>
+                        <span>Indian</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Category:</span>
+                        <span>OBC</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Marital Status:</span>
+                        <span>Unmarried</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Gender:</span>
+                        <span>Female</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Religion:</span>
+                        <span>Muslim</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">Ready to Make a Difference in Healthcare</h3>
+            <p style="color: #666; margin-bottom: 20px;">
+                Passionate about providing exceptional patient care and continuously improving healthcare outcomes through evidence-based practice and compassionate nursing.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="mailto:wahidakhatun1@gmail.com" class="btn btn-primary">
+                    <span>📧</span> Contact Me
+                </a>
+                <a href="tel:6002060862" class="btn btn-secondary">
+                    <span>📱</span> Call Now
+                </a>
+                <button onclick="downloadResume()" class="btn btn-secondary">
+                    <span>📄</span> Download Resume
+                </button>
+                <button onclick="window.print()" class="btn btn-secondary">
+                    <span>🖨️</span> Print Portfolio
+                </button>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #999; font-size: 0.9em;">
+                <p><strong>Declaration:</strong> I hereby declare that all the particulars mentioned above are correct and true to the best of my knowledge and belief.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        // Add staggered delay for multiple elements
+                        const delay = Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100;
+                        entry.target.style.animationDelay = delay + 'ms';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            // Observe footer
+            const footer = document.querySelector('.footer');
+            if (footer) {
+                observer.observe(footer);
+                footer.classList.add('card'); // Apply same animation class
+            }
+
+            // Add hover effects to cards
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) rotateX(5deg)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotateX(0deg)';
+                });
+            });
+
+            // Add click-to-copy functionality for email and phone
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const text = this.textContent.trim();
+                    if (text.includes('@')) {
+                        navigator.clipboard.writeText(text.split(' ')[1]);
+                        this.style.background = 'rgba(46, 204, 113, 0.2)';
+                        setTimeout(() => {
+                            this.style.background = 'rgba(52, 152, 219, 0.1)';
+                        }, 1000);
+                    } else if (text.includes('6002060862')) {
+                        navigator.clipboard.writeText('6002060862');
+                        this.style.background = 'rgba(46, 204, 113, 0.2)';
+                        setTimeout(() => {
+                            this.style.background = 'rgba(52, 152, 219, 0.1)';
+                        }, 1000);
+                    }
+                });
+            });
+
+            // Download resume function
+            window.downloadResume = function() {
+                // Create a clean resume version
+                const resumeContent = `
+WAHIDA KHATUN
+Registered Nurse
+
+Email: wahidakhatun1@gmail.com | Phone: 6002060862
+Address: Bhakat Gaun, Chillangani, Saddar, Nagaon, Assam - 782002
+
+PROFESSIONAL SUMMARY
+Dedicated Registered Nurse with 1+ years of intensive care experience and comprehensive clinical training in General Nursing and Midwifery. Proven expertise in critical patient care, ventilator management, emergency response protocols, medication administration, and patient documentation. Strong advocate for patient-centered care with excellent communication skills and ability to work effectively in high-pressure healthcare environments.
+
+WORK EXPERIENCE
+
+ICU Registered Nurse
+Royal Hospital, Kolkata | January 2022 – May 2023
+
+• Delivered comprehensive patient-centered care to 8-12 critically ill patients per shift in a 24-bed ICU, maintaining 98% patient satisfaction scores through attentive monitoring and compassionate care delivery
+
+• Managed mechanical ventilators and invasive monitoring systems for patients with respiratory failure, ensuring optimal oxygenation and hemodynamic stability while reducing ventilator-associated complications by 15%
+
+• Executed emergency response protocols during code blue situations, demonstrating quick decision-making skills and coordinating with multidisciplinary teams to achieve successful patient outcomes in 90% of emergency interventions
+
+• Collaborated effectively with physicians, respiratory therapists, and healthcare staff to develop and implement individualized care plans, contributing to a 20% reduction in average ICU length of stay
+
+• Provided comprehensive family education and support regarding patient conditions, treatment plans, and discharge preparations, improving family understanding and compliance with care instructions by 85%
+
+Clinical Intern
+Aster CMI Hospital | Duration: 6 months
+
+• Gained hands-on experience in various nursing specialties including medical-surgical, pediatric, and emergency care units
+• Assisted senior nurses with patient care activities, medication administration, and clinical documentation procedures
+
+EDUCATION
+
+General Nursing and Midwifery (G.N.M)
+Rajiv Gandhi School of Nursing | 2021 – 2024
+Registration Number: 20DN05128
+
+Academic Performance:
+• 1st Year: 66.6% (Karnataka State Diploma in Nursing Examination Board, 2022)
+• 2nd Year: 65.0% (Karnataka State Diploma in Nursing Examination Board, 2023)
+• 3rd Year: 70.75% (Karnataka State Diploma in Nursing Examination Board, 2024)
+
+Higher Secondary Education
+S.A.B.A Board | 2019 | Stream: Arts | Percentage: 37.8%
+
+Secondary Education
+S.A.B.A Board | 2017 | Percentage: 45.83%
+
+CORE COMPETENCIES
+
+Clinical Skills:
+• Medication Administration and Management
+• Patient Assessment and Monitoring
+• Ventilator Management and Respiratory Care
+• Central Venous Pressure CVP Assistance
+• Emergency Response and Code Blue Protocols
+• Infection Control and Prevention
+• Wound Care and Dressing Management
+
+Documentation and Communication:
+• Electronic Health Records EHR Management
+• Clinical Charting and Documentation
+• Patient and Family Education
+• Interdisciplinary Team Collaboration
+• Healthcare Quality Improvement
+• Medical Terminology
+
+Technical Skills:
+• Basic Computer Skills
+• Medical Equipment Operation
+• Patient Safety Standards
+• Healthcare Compliance
+
+LANGUAGES
+Hindi (Native) | Bengali (Native) | English (Proficient) | Kannada (Conversational)
+
+PERSONAL INFORMATION
+Date of Birth: January 20, 2000
+Nationality: Indian
+Category: OBC
+Marital Status: Unmarried
+Gender: Female
+Religion: Muslim
+
+DECLARATION
+I hereby declare that all the particulars mentioned above are correct and true to the best of my knowledge and belief. If any information is found to be false at any stage, I accept that my employment may be terminated without prior notice.
+
+Date: ___________                    Signature: Wahida Khatun
+                `;
+
+                // Create and download text file
+                const element = document.createElement('a');
+                const file = new Blob([resumeContent], { type: 'text/plain' });
+                element.href = URL.createObjectURL(file);
+                element.download = 'Wahida_Khatun_Resume.txt';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+
+                // Show download success message
+                const originalText = event.target.innerHTML;
+                event.target.innerHTML = '<span>✓</span> Downloaded!';
+                event.target.style.background = 'rgba(46, 204, 113, 0.8)';
+                setTimeout(() => {
+                    event.target.innerHTML = originalText;
+                    event.target.style.background = '';
+                }, 2000);
+            };
+        });
+    </script>
+</body>
+</html>
